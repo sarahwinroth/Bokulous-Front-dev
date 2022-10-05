@@ -37,3 +37,9 @@
 	color: var(--accentlight);
 	background-color: var(--accentdark);
   }
+  .popup-btn{
+	margin-top: 2rem;
+	padding: 6px;
+	color: var(--text);
+	border: solid 2px var(--accentlight);
+  }

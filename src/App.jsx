@@ -9,6 +9,15 @@ import CreateUser from './components/CreateUser';
 import LogIn from './components/LogIn';
 import StatsForAdmin from './components/StatsForAdmin';
 import Profile from './components/Profile';
+import GetBooksAdmin from './components/GetBooksAdmin';
+import AddBook from './components/AddBook';
+import DeleteBook from './components/DeleteBook';
+import UpdateBook from './components/UpdateBook';
+import PurgeBook from './components/PurgeBook';
+import GetCategories from './components/GetCategories';
+import AddCategory from './components/AddCategory';
+import DeleteCategory from './components/DeleteCategory';
+import UpdateCategory from './components/UpdateCategory';
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -54,6 +63,87 @@ function App() {
               path="/Profile"
               element={
                 <Profile
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/GetBooksAdmin"
+              element={
+                <GetBooksAdmin
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/AddBook"
+              element={
+                <AddBook
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/DeleteBook"
+              element={
+                <DeleteBook
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/PurgeBook"
+              element={
+                <PurgeBook
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/UpdateBook"
+              element={
+                <UpdateBook
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/GetCategories"
+              element={
+                <GetCategories
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/AddCategory"
+              element={
+                <AddCategory
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/DeleteCategory"
+              element={
+                <DeleteCategory
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/UpdateCategory"
+              element={
+                <UpdateCategory
                   loggedInUser={loggedInUser}
                   setLoggedInUser={setLoggedInUser}
                 />
