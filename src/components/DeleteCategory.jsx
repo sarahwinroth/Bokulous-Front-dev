@@ -33,7 +33,7 @@ const DeleteCategory = (props) => {
       <div className="box">
         <span className="close-icon" onClick={props.handleClose}>x</span>
         {props.content}
-        <span className='popup-btn' onClick={deleteCategory}>Ta bort</span>
+        <button className="lp-buttons" onClick={deleteCategory}>Ta bort</button>
       </div>
     </div>
   );

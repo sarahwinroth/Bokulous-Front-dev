@@ -14,8 +14,3 @@ td, th {
 .array {
     border: none;
 }
-
-button {
-	background-color: var(--accentlight);
-	border-color: var(--accentlight);
-}

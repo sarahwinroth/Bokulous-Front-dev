@@ -36,7 +36,7 @@ const AddCategory = (e) => {
           placeholder="Ny kategori"
           onChange={(e) => setCategory(e.target.value)}
         />
-        <span className='popup-btn' onClick={addCategory}>Spara</span>     
+        <button className="lp-buttons" onClick={addCategory}>Spara</button>     
       </div>
     </div>
     );

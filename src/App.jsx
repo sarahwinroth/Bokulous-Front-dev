@@ -18,6 +18,7 @@ import GetCategories from './components/GetCategories';
 import AddCategory from './components/AddCategory';
 import DeleteCategory from './components/DeleteCategory';
 import UpdateCategory from './components/UpdateCategory';
+import GetUserBooks from './components/GetUserBooks';
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -144,6 +145,15 @@ function App() {
               path="/UpdateCategory"
               element={
                 <UpdateCategory
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
+            />
+            <Route
+              path="/GetUserBooks"
+              element={
+                <GetUserBooks
                   loggedInUser={loggedInUser}
                   setLoggedInUser={setLoggedInUser}
                 />

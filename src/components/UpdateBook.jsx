@@ -125,7 +125,7 @@ const UpdateBook = (props) => {
             </label>
             </form> 
     
-            <button className='popup-btn' onClick={updateBook}>Spara ändringar</button>
+            <button className="lp-buttons" onClick={updateBook}>Spara ändringar</button>
           
           </div>
         </div>

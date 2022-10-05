@@ -1,4 +1,4 @@
-import '../styles/GetBooksAdmin.css';
+import '../styles/table.css';
 import { useState, useEffect } from 'react';
 import config from '../config.js';
 import AddCategory from './AddCategory';
@@ -58,7 +58,7 @@ const GetCategories = () => {
                 <td>{category.name}</td>                                 
                     <td>
                         <td className='array'>
-                        <button onClick={() => toggleEdit(i)}>Redigera</button>
+                        <button className="lp-buttons" onClick={() => toggleEdit(i)}>Redigera</button>
                         {isEditOpen && i == currentCategory && (
                         <UpdateCategory 
                         index = {currentCategory}
@@ -68,7 +68,7 @@ const GetCategories = () => {
                         )}
                         </td>
                             <td className='array'>
-                            <button onClick={() => toggleDelete(i)}>Ta bort</button>
+                            <button className="lp-buttons" onClick={() => toggleDelete(i)}>Ta bort</button>
                             {isDeleteOpen && i == currentCategory && (
                             <DeleteCategory 
                             index = {currentCategory}

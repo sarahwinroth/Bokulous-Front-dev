@@ -43,3 +43,15 @@
 	color: var(--text);
 	border: solid 2px var(--accentlight);
   }
+
+  .lp-buttons {
+	background-color: var(--accentlight);
+	border-color: var(--accentlight);
+	margin: 1rem;
+}
+
+.lp-buttons:hover {
+  color: var(--accentdark);
+  transition: 0.3s transform, 0.3s background-color, 0.3s box-shadow, 0.3s ease-in-out;
+  box-shadow: 3px 3px 3px 3px rgba(31, 31, 29, 0.2);
+}

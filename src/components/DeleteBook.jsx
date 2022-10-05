@@ -28,7 +28,7 @@ const DeleteBook = (props) => {
       <div className="box">
         <span className="close-icon" onClick={props.handleClose}>x</span>
         {props.content}
-        <span className='popup-btn' onClick={deleteBook}>Ta bort</span>
+        <button className="lp-buttons" onClick={deleteBook}>Ta bort</button>
       </div>
     </div>
   );

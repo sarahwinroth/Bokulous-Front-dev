@@ -131,7 +131,7 @@ const AddBook = (props) => {
         </label>
         </form> 
 
-        <button className='popup-btn' onClick={addBook}>Lägg till bok</button>
+        <button className="lp-buttons" onClick={addBook}>Lägg till bok</button>
       
       </div>
     </div>

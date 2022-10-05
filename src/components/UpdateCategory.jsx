@@ -42,7 +42,7 @@ const UpdateCategory = (props) => {
           placeholder="Ny kategori"
           onChange={(e) => setCategory(e.target.value)}
         />
-        <span className='popup-btn' onClick={updateCategory}>Spara</span>     
+        <button className="lp-buttons" onClick={updateCategory}>Spara</button>     
       </div>
     </div>
     );

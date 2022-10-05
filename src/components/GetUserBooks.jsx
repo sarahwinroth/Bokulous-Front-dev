@@ -7,7 +7,7 @@ import UpdateBook from './UpdateBook';
 import DeleteBook from './DeleteBook';
 import PurgeBook from './PurgeBook';
 
-const GetBooksAdmin = () => {
+const GetUserBooks = () => {
   const [books, setBooks] = useState(null);
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false); 
@@ -17,8 +17,11 @@ const GetBooksAdmin = () => {
 
   useEffect(() => {
     async function fetchData() {
-      let action = "/api/Admin/GetBooksAdmin"
-      let response = await fetch(config.apiSettings.address + ":" + config.apiSettings.port + action)
+      
+      const userId = "633be9a332571fe27e4b06c3"
+
+      let action = "/api/Books/GetBooksSeller"
+      let response = await fetch(config.apiSettings.address + ":" + config.apiSettings.port + action + `/${userId}`)
 
       let data = await response.json();
       console.log(data);
@@ -48,7 +51,7 @@ const GetBooksAdmin = () => {
 
   return (
     <section className="main-container">
-      <h2>Alla böcker i lager</h2>
+      <h2>Dina böcker till försäljning</h2>
       <button className="lp-buttons" onClick={togglePopUpAddBook}>Lägg till bok</button>
               {isAddOpen && (
                 <AddBook               
@@ -94,7 +97,7 @@ const GetBooksAdmin = () => {
                     )}                  
                     </td>
                     <td className='array'>
-                    <button className="lp-buttons" onClick={() => togglePopUpDeleteBook(i)}> Ta bort</button> 
+                    <button className="lp-buttons" onClick={() => togglePopUpDeleteBook(i)}>Ta bort</button> 
                     {isDeleteOpen && i == currentOpenBook && (
                     <DeleteBook 
                       index = {currentOpenBook}
@@ -110,7 +113,6 @@ const GetBooksAdmin = () => {
                     />
                     )}                         
                     </td>
-                    
                     <td className='array'>
                     <button className="lp-buttons" onClick={() => togglePopUpPurgeBook(i)}>Radera</button> 
                     {isPurgeOpen && i == currentOpenBook && (
@@ -138,4 +140,4 @@ const GetBooksAdmin = () => {
   );
 };
 
-export default GetBooksAdmin;
+export default GetUserBooks;

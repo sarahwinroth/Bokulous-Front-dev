@@ -5,6 +5,8 @@ const PurgeBook = (props) => {
 
   const books = props.books
   const book = books[props.index]
+  //const adminId = props.loggedInUser.id
+  //const password = props.loggedInUser.password
   const adminId = "633be9a332571fe27e4b06c3"
   const password = "mainadmin123"
 
@@ -38,7 +40,7 @@ const PurgeBook = (props) => {
       <div className="box">
         <span className="close-icon" onClick={props.handleClose}>x</span>
         {props.content}
-        <button className='popup-btn' onClick={purgeBook}>Radera</button>
+        <button className="lp-buttons" onClick={purgeBook}>Radera</button>
       </div>
     </div>
   );
