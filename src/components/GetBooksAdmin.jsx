@@ -1,19 +1,20 @@
-import '../styles/table.css';
-import '../styles/Landingpage.css';
-import { useState, useEffect } from 'react';
-import config from '../config.js';
-import AddBook from './AddBook';
-import UpdateBook from './UpdateBook';
-import DeleteBook from './DeleteBook';
-import PurgeBook from './PurgeBook';
+import '../styles/table.css'
+import '../styles/Landingpage.css'
+import { useState, useEffect } from 'react'
+import config from '../config.js'
+import AddBook from './AddBook'
+import UpdateBook from './UpdateBook'
+import DeleteBook from './DeleteBook'
+import PurgeBook from './PurgeBook'
 
 const GetBooksAdmin = () => {
-  const [books, setBooks] = useState(null);
-  const [isAddOpen, setIsAddOpen] = useState(false);
-  const [isEditOpen, setIsEditOpen] = useState(false); 
-  const [isDeleteOpen, setIsDeleteOpen] = useState(false); 
-  const [isPurgeOpen, setIsPurgeOpen] = useState(false);
-  const [currentOpenBook, setCurrentOpenBook] = useState(-1); 
+  const [books, setBooks] = useState(null)
+  const [isAddOpen, setIsAddOpen] = useState(false)
+  const [isEditOpen, setIsEditOpen] = useState(false) 
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false) 
+  const [isPurgeOpen, setIsPurgeOpen] = useState(false)
+  const [currentOpenBook, setCurrentOpenBook] = useState(-1) 
+  //const [refreshKey, setRefreshKey] = useState(0)
 
   useEffect(() => {
     async function fetchData() {
@@ -24,7 +25,6 @@ const GetBooksAdmin = () => {
       console.log(data);
       setBooks(data);
     }
-
     fetchData();
   }, []);
 
@@ -51,7 +51,7 @@ const GetBooksAdmin = () => {
       <h2>Alla böcker i lager</h2>
       <button className="lp-buttons" onClick={togglePopUpAddBook}>Lägg till bok</button>
               {isAddOpen && (
-                <AddBook               
+                <AddBook        
                   handleClose={togglePopUpAddBook}/>
                 )}                
       <div className="list-books-container">

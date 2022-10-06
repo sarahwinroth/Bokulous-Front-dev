@@ -1,32 +1,31 @@
-import { useState } from 'react';
-import config from '../config.js';
-import '../styles/PopUp.css';
+import { useState } from 'react'
+import config from '../config.js'
+import '../styles/PopUp.css'
 
 const AddBook = (props) => {
     // const id = props.loggedInUser.id
     // const username = props.loggedInUser.username
     // const mail = props.loggedInUser.mail
 
-    const [isbn, setIsbn] = useState("");
-    const [title, setTitle] = useState("");
-    const [joinedCategories, setJoinedCategories] = useState("");
-    const [joinedAuthors, setJoinedAuthors] = useState("");   
-    const [language, setLanguage] = useState("");
-    const [published, setPublished] = useState(0);
-    const [weight, setWeight] = useState(0);
-    const [price, setPrice] = useState(0);
-    const [inStorage, setInstorage] = useState(0);
-    const [isUsed, setIsUsed] = useState(false);
-    const [bookCover, setBookCover] = useState("");
+    const [isbn, setIsbn] = useState("")
+    const [title, setTitle] = useState("")
+    const [joinedCategories, setJoinedCategories] = useState("")
+    const [joinedAuthors, setJoinedAuthors] = useState("")  
+    const [language, setLanguage] = useState("")
+    const [published, setPublished] = useState()
+    const [weight, setWeight] = useState()
+    const [price, setPrice] = useState()
+    const [inStorage, setInstorage] = useState()
+    const [isUsed, setIsUsed] = useState(false)
 
-     const [id, setId] = useState("633b4bbaa1414c18057c1d10");
-     const [username, setUsername] = useState("admin");
-     const [mail, setMail] = useState("admin@mail.com");
+     const [id, setId] = useState("633b4bbaa1414c18057c1d10")
+     const [username, setUsername] = useState("admin")
+     const [mail, setMail] = useState("admin@mail.com")
+     const [book, setBook] = useState(null)
 
-    const [inputCat, setInputCat] = useState("");
-    const [inputAut, setInputAut] = useState("");
+    const [statusResponse, setStatusResponse] = useState(0)
 
-    function addBook() 
+    async function addBook() 
     {
       const categories = joinedCategories.split(", ")
       const authors = joinedAuthors.split(", ")
@@ -45,8 +44,7 @@ const AddBook = (props) => {
             id: id,
             username: username,
             mail: mail
-          },
-          bookCover: bookCover
+          }
          }
         
          let action = "/api/Books/AddBook"
@@ -59,10 +57,10 @@ const AddBook = (props) => {
              },
              body: JSON.stringify(newBook),
          }).then((result) => {
-            result.json().then((resp) => {
-                 console.log(resp)
-             })
-         })
+             result.json().then((resp) => {
+              console.log(resp)
+              })
+          })
      }
 
     return (
